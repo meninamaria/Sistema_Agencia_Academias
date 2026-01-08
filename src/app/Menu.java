@@ -2,6 +2,6 @@ package app;
 
 public class Menu {
     public static void main() {
-        System.out.println("Raquel é CHEIRADORA DE SUVACO");
+        System.out.println("Maria come merda e goza com isso!!!!!");
     }
 }
