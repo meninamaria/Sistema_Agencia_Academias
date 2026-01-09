@@ -20,7 +20,6 @@ public class Menu {
             nomeCliente = JOptionPane.showInputDialog(null, "informe seu nome:", JOptionPane.QUESTION_MESSAGE);
             idadeCliente = Integer.parseInt(JOptionPane.showInputDialog(null, "informe seu idade:", JOptionPane.QUESTION_MESSAGE));
 
-
         }
     }
 }
