@@ -1,7 +1,7 @@
 package app;
 
 public class Menu {
-    static void main() {
-        System.out.println("CadÊ o amor?");
+    public static void main() {
+        System.out.println("Maria come merda e goza com isso!!!!!");
     }
 }
