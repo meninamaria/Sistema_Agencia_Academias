@@ -1,78 +1,85 @@
 package app;
 
 public class Academia {
-    private String nomeAcad;
-    private String ruaAcad;
-    private String bairroAcad;
-    private int numAcad;
-    private String telefoneAcad;
-    private double avaliacaoAcad;
-    private int num_personais;
-    //private String atividades_ofertadas;
+    //Atributos da academia
 
-    public Academia(String nomeAcad, String ruaAcad, String bairroAcad, int numAcad, String telefoneAcad, double avaliacaoAcad, int num_personais) {
-        this.nomeAcad = nomeAcad;
-        this.ruaAcad = ruaAcad;
-        this.bairroAcad = bairroAcad;
-        this.numAcad = numAcad;
-        this.telefoneAcad = telefoneAcad;
-        this.avaliacaoAcad = avaliacaoAcad;
-        this.num_personais = num_personais;
+    private String nome;
+    private String endereco;
+    private String n_contato;
+    private float mensalidade;
+    private String atividadesOfertadas;
+    private int numPersonais;
+    private String avaliacao;
+
+
+    public Academia(String nome, String endereco, String n_contato, float mensalidade, String atividadesOfertadas, int numPersonais){
+        this.idAcd = GerenciamentoSistema.IDACD;
+        ++GerenciamentoSistema.IDACD;
+
+        this.nome = nome;
+        this.endereco = endereco;
+        this.n_contato = n_contato;
+        this.mensalidade = mensalidade;
+        this.atividadesOfertadas = atividadesOfertadas;
+        this.numPersonais = numPersonais;
+        this.avaliacao = avaliacao;
+
     }
 
-    public String getNomeAcad() {
-        return nomeAcad;
+    Academia() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public void setNomeAcad(String nomeAcad) {
-        this.nomeAcad = nomeAcad;
+    public String getNome(){
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getRuaAcad() {
-        return ruaAcad;
+    public String getEndereco() {
+        return endereco;
+    }
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
-    public void setRuaAcad(String ruaAcad) {
-        this.ruaAcad = ruaAcad;
+    public String getN_contato() {
+        return n_contato;
+    }
+    public void setN_contato(String n_contato) {
+        this.n_contato = n_contato;
     }
 
-    public String getBairroAcad() {
-        return bairroAcad;
+    public float getMensalidade() {
+        return mensalidade;
+    }
+    public void setMensalidade(float mensalidade) {
+        this.mensalidade = mensalidade;
     }
 
-    public void setBairroAcad(String bairroAcad) {
-        this.bairroAcad = bairroAcad;
+    public String getAtividadesOfertadas() {
+        return atividadesOfertadas;
+    }
+    public void setAtividadesOfertadas(String atividadesOfertadas) {
+        this.atividadesOfertadas = atividadesOfertadas;
     }
 
-    public int getNumAcad() {
-        return numAcad;
+    public int getNumPersonais() {
+        return numPersonais;
+    }
+    public void setNumPersonais(int numPersonais) {
+        this.numPersonais = numPersonais;
     }
 
-    public void setNumAcad(int numAcad) {
-        this.numAcad = numAcad;
+    public String getAvaliacao() {
+        return avaliacao;
+    }
+    public void setAvaliacao(String avaliacao) {
+        this.avaliacao = avaliacao;
     }
 
-    public String getTelefoneAcad() {
-        return telefoneAcad;
-    }
-
-    public void setTelefoneAcad(String telefoneAcad) {
-        this.telefoneAcad = telefoneAcad;
-    }
-
-    public double getAvaliacaoAcad() {
-        return avaliacaoAcad;
-    }
-
-    public void setAvaliacaoAcad(double avaliacaoAcad) {
-        this.avaliacaoAcad = avaliacaoAcad;
-    }
-
-    public int getNum_personais() {
-        return num_personais;
-    }
-
-    public void setNum_personais(int num_personais) {
-        this.num_personais = num_personais;
+    public String toSting(){
+        return "Nome: " + this.nome + "Endereco: " + this.endereco + "Numero para contato: " + this.n_contato + "Mensalidade: " + this.mensalidade + "Atividades ofertadas: " + this.atividadesOfertadas + "Numero de Personais: " + this.numPersonais + "avaliacao: " + this.avaliacao;
     }
 }
