@@ -50,4 +50,7 @@ public class Clientes {
         this.restricaoMed = restricaoMed;
     }
 
+    public String toString(){
+        return "Nome: " + this.nome + " | CPF: " + this.cpf + " | Idade: " + this.idade + " | Restricao Medica: " + this.restricaoMed;
+    }
 }
