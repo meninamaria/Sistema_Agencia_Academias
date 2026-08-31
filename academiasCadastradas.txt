@@ -1,5 +1,0 @@
-101;VIP Fitness;Avenida São Jeronimo;(84) 99215-1321;89.9;Crossfit;8;0.0
-102;AcadJaguar;Rua Jaguar City;(88) 96252-5616;140.0;Nenhuma;11;0.0
-103;POWER;rua dr jão ribeiro    ;(74) 99802-3455;500.0; nenhuma;29;0.0
-104;567390;29476920;(99) 99999-9999;64893.0;nenhum  ;78936;0.0
-105;~~~~~~~~; RUA MARIA OLIVEIRA ;(99) 99999-9999;89.9;nenhum ;78;0.0

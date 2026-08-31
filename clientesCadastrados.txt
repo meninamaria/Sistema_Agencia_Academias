@@ -1,6 +1,0 @@
-1;Nirla Maria Vieira;543.764.251-41;49;nirla_maria;@12345;ASMA
-1;Liana Marques Mouse;516.515.614-65;20;@mouse_liana;ratinhaUFC;Amar demais
-1;Maria;000.000.000-00;18;MaryScateira;xixicoco;Roblox
-1; Sammy ;089.234.674-32;123;sammyzita ;001934;Nenhuma 
-1; maria;980.123.178-90;29;maria01;maria123;nenhuma 
-1; 7272997;728.277.383-37;17;73803703;178290;nenhuma

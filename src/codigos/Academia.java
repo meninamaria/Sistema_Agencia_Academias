@@ -1,9 +1,6 @@
 package codigos;
 
-
 public class Academia {
-    //Atributos da academia
-   
 
     private int idAcd;
     private String nome;
@@ -13,29 +10,27 @@ public class Academia {
     private String atividadesOfertadas;
     private int numPersonais;
     private double avaliacao;
-    private String login;
-    private String senha;
 
-    // aqui é o construtor para carregar o academiasCadastradas.txt
-    public Academia(int idAcd, String nome, String endereco, String n_contato, double mensalidade, int numPersonais, String atividadesOfertadas){
-        
+    // Construtor usado quando os dados vêm do banco (id já existe)
+    public Academia(int idAcd, String nome, String endereco, String n_contato, double mensalidade,
+                     int numPersonais, String atividadesOfertadas, double avaliacao) {
         this.idAcd = idAcd;
         this.nome = nome;
-        this.n_contato = n_contato;
         this.endereco = endereco;
+        this.n_contato = n_contato;
         this.mensalidade = mensalidade;
         this.numPersonais = numPersonais;
         this.atividadesOfertadas = atividadesOfertadas;
         this.avaliacao = avaliacao;
     }
-    
-    // aqui é o construtor para add uma nova acadamia
-    public Academia(String nome, String endereco, String n_contato, double mensalidade, int numPersonais, String atividadesOfertadas){
-        
-        this.idAcd = GerenciamentoSistema.getPROX_ID_acad();
+
+    // Construtor usado para cadastrar uma nova academia (id ainda não existe, será gerado pelo banco)
+    public Academia(String nome, String endereco, String n_contato, double mensalidade,
+                     int numPersonais, String atividadesOfertadas) {
+        this.idAcd = 0; // definido depois do INSERT, pelo AcademiaDAO
         this.nome = nome;
-        this.n_contato = n_contato;
         this.endereco = endereco;
+        this.n_contato = n_contato;
         this.mensalidade = mensalidade;
         this.numPersonais = numPersonais;
         this.atividadesOfertadas = atividadesOfertadas;
@@ -46,9 +41,15 @@ public class Academia {
         return this.idAcd;
     }
 
-    public String getNome(){
+    // Usado apenas pelo AcademiaDAO logo após o INSERT, para setar o id gerado pelo AUTO_INCREMENT
+    public void setIdAcd(int idAcd) {
+        this.idAcd = idAcd;
+    }
+
+    public String getNome() {
         return this.nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -56,6 +57,7 @@ public class Academia {
     public String getEndereco() {
         return this.endereco;
     }
+
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
@@ -63,6 +65,7 @@ public class Academia {
     public String getN_contato() {
         return this.n_contato;
     }
+
     public void setN_contato(String n_contato) {
         this.n_contato = n_contato;
     }
@@ -70,6 +73,7 @@ public class Academia {
     public double getMensalidade() {
         return this.mensalidade;
     }
+
     public void setMensalidade(double mensalidade) {
         this.mensalidade = mensalidade;
     }
@@ -77,6 +81,7 @@ public class Academia {
     public String getAtividadesOfertadas() {
         return this.atividadesOfertadas;
     }
+
     public void setAtividadesOfertadas(String atividadesOfertadas) {
         this.atividadesOfertadas = atividadesOfertadas;
     }
@@ -84,48 +89,25 @@ public class Academia {
     public int getNumPersonais() {
         return this.numPersonais;
     }
+
     public void setNumPersonais(int numPersonais) {
         this.numPersonais = numPersonais;
     }
 
+    // Agora representa a MÉDIA das avaliações (carregada do banco), não mais um valor "setado" na mão
     public double getAvaliacao() {
         return this.avaliacao;
     }
+
     public void setAvaliacao(double avaliacao) {
         this.avaliacao = avaliacao;
     }
-    
 
-    public String toString(){
-        return "Id: " + this.idAcd + " | Nome: " + this.nome + " | Endereco: " + this.endereco + " | Numero para contato: " + this.n_contato + " | Mensalidade: " + this.mensalidade + " | Atividades ofertadas: " + this.atividadesOfertadas + " | Numero de Personais: " + this.numPersonais + " | Avaliacao: " + this.avaliacao;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-        public String toFileString() {
-        return this.idAcd + ";" + this.nome + ";" + this.endereco + ";" +
-                this.n_contato + ";" + this.mensalidade + ";" + this.atividadesOfertadas + ";" + this.numPersonais + ";" + this.avaliacao;
-    }
-
-    public static Academia fromFileString(String linha) {
-        String[] dados = linha.split(";");
-        if (dados.length != 8) {
-            System.out.println("Linha com formato inválido: " + linha);
-            return null;
-        }
-
-        try {
-            return new Academia(Integer.parseInt(dados[0].trim()), dados[1].trim(), dados[2].trim(), dados[3].trim(), Double.parseDouble(dados[4].trim()), Integer.parseInt(dados[6].trim()), dados[5].trim());
-
-        } catch (NumberFormatException e) {
-            System.out.println("Erro ao converter dados: " + linha);
-            return null;
-        }
+    @Override
+    public String toString() {
+        return "Id: " + this.idAcd + " | Nome: " + this.nome + " | Endereco: " + this.endereco +
+                " | Numero para contato: " + this.n_contato + " | Mensalidade: " + this.mensalidade +
+                " | Atividades ofertadas: " + this.atividadesOfertadas + " | Numero de Personais: " +
+                this.numPersonais + " | Avaliacao: " + this.avaliacao;
     }
 }

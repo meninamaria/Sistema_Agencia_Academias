@@ -8,8 +8,8 @@ public class ConexaoBD {
 
     private static final String URL =
         "jdbc:mysql://localhost:3306/agencia_academias?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
-    private static final String USUARIO = "root";
-    private static final String SENHA = "COLOQUE_SUA_SENHA_AQUI";
+    private static final String USUARIO = "maria";
+    private static final String SENHA = "2203";
 
     private ConexaoBD() {
     }
